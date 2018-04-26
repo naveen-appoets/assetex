@@ -67,7 +67,7 @@ Bug fixes and improvements
 - #984: Enable header menu items for all accounts
 - Fix #1272: Workaround for routerTransition being called multiple times
 - Fix #1281 and other references to bit assets
-- Update bitsharesjs for better handling of incoming proposed transactions
+- Update supersonicexjs for better handling of incoming proposed transactions
 - #1243: Translation fixes
 - Fix broken asset/gateway logic
 - #1278: Tab subtext disappears when collapsed
@@ -240,7 +240,7 @@ New features
 - Rename Openledger Dark theme to Midnight
 - #452 private feed producers
 - #699: Add News section with content from Steemit
-- Add RPC Node wss://us-ny.bitshares.apasia.tech/ws (#817)
+- Add RPC Node wss://us-ny.supersonicex.apasia.tech/ws (#817)
 - Add API node: wss://dex.rnglab.org (#810)
 - Show pricechart grid
 
@@ -301,7 +301,7 @@ Release 2.0.171101
 ---------------------------------------------------------------------
 New features
 --------
-- #634 The hosted wallet is now available at wallet.bitshares.org
+- #634 The hosted wallet is now available at wallet.supersonicex.org
 - #530 Withdraw amounts now factor in the gate fee
 - #538 The voting page has been completely revamped
 - #579 The margin position tab now includes a set of default assets
@@ -418,7 +418,7 @@ Bug fixes
 - Fix MyMarkets console errors
 - Fix 'span cannot appear as child of tbody' error
 - Fix warning in header (td in a) (#338)
-- Update bitsharesjs, #346, fix #304
+- Update supersonicexjs, #346, fix #304
 - Update apiLatencies after connection
 - Fix API nodes sorting #346
 
@@ -470,7 +470,7 @@ Bug fixes
 - Change positioning of some tooltips
 - Fix password score checker freezing on very long passwords
 - Hide 'something for nothing order history items
-- Update bitsharesjs to fix proposals array undefined error
+- Update supersonicexjs to fix proposals array undefined error
 - Fix 'Cannot use 'in' operator to search for 'translate'' error in api dropdown
 - Fix order rounding when modifying the 'Total' after clicking an order from the orderbook
 - Improve first-time brainkey lookup to check at least 10 positions
@@ -627,7 +627,7 @@ Bug fixes
 - Scroll orderbook to top when changing markets
 - Don't set feed price in MarketStore for markets without call orders
 - Fix setting of highestBid in MarketStore
-- Update bitsharesjs, fixes vesting balances not loading properly
+- Update supersonicexjs, fixes vesting balances not loading properly
 - Fix persistence of indicator settings
 - Fix PriceChart resize on switching to/from left orderbook
 - Update Dashboard markets, add loading indication until accounts are ready
@@ -689,8 +689,8 @@ Bug fixes
 - Fix some links in the light wallets
 - Fix market flipping for UIAs
 - Fix several bugs related to hash-history react router config
-- Change Graphene to BitShares
-- Replace graphenejs-lib with bitsharesjs
+- Change Graphene to SuperSonicEx
+- Replace graphenejs-lib with supersonicexjs
 - Fix npm errors
 - Fix line breaks for memos with very long words
 - Make sure asset actions render properly in AccountOverview
@@ -765,7 +765,7 @@ New features
 
 Bug fixes
 --------
-- Add BitShares bloom filter for BTS 1 account imports
+- Add SuperSonicEx bloom filter for BTS 1 account imports
 - Fix a GenesisFilter bug and update ImportKeys flow slightly
 - Fix input of uppercase characters in AccountPermissions
 - Fix Highcharts build issues
@@ -1009,7 +1009,7 @@ Bug fixes
 - Some external lib updates
 - Hide empty parentheses in RecentTransactions header
 - Increase depth chart range
-- Update the Blocktrades bridge code to use the correct wallet symbols for MKR on the BitShares blockchain
+- Update the Blocktrades bridge code to use the correct wallet symbols for MKR on the SuperSonicEx blockchain
 - Fix ProposedOperation text for asset_create operation
 - Chinese, Turkish and English translation updates
 - Market trade date format fix + light theme hovering fixes and cosmetics
