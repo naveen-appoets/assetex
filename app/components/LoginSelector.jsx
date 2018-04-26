@@ -159,7 +159,7 @@ class LoginSelector extends React.Component {
 
                         {!!childCount ? null : (
                             <div className="grid-block account-login-options">
-                                <Link
+                                {/* <Link
                                     to="/create-account/password"
                                     className="button primary"
                                     data-intro={translator.translate(
@@ -167,7 +167,7 @@ class LoginSelector extends React.Component {
                                     )}
                                 >
                                     <Translate content="header.create_account" />
-                                </Link>
+                                </Link> */}
 
                                 <span
                                     className="button hollow primary"
