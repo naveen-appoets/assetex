@@ -362,7 +362,7 @@ class Header extends React.Component {
                 })}
                 onClick={this._onNavigate.bind(this, "/dashboard")}
             >
-                <img style={{margin: 0, height: 60}} src={logo} />
+                <img style={{margin: 0, width: 125, height: 65}} src={logo} />
             </a>
         );
 
@@ -852,7 +852,7 @@ class Header extends React.Component {
         };
 
         return (
-            <div className="header-container" style={{minHeight: "64px"}}>
+            <div className="header-container" style={{minHeight: "89px"}}>
                 <div>
                     <div
                         className="header menu-group primary"
