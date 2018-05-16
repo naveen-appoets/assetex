@@ -362,7 +362,7 @@ class Header extends React.Component {
                 })}
                 onClick={this._onNavigate.bind(this, "/dashboard")}
             >
-                <img style={{margin: 0, height: 40}} src={logo} />
+                <img style={{margin: 0, height: 60}} src={logo} />
             </a>
         );
 
