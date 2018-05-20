@@ -27,6 +27,7 @@ import AccountImage from "../Account/AccountImage";
 import {ChainStore} from "bitsharesjs/es";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import {List} from "immutable";
+import axios from "axios";
 
 var logo = require("assets/logo-ico-blue.png");
 
@@ -48,9 +49,10 @@ class Header extends React.Component {
         super();
         this.state = {
             active: context.location.pathname,
-            accountsListDropdownActive: false
+            accountsListDropdownActive: false,
+            verifiedKYC: false
         };
-
+        // this._verifyKYC = this._verifyKYC.bind(this);
         this.unlisten = null;
         this._toggleAccountDropdownMenu = this._toggleAccountDropdownMenu.bind(
             this
@@ -123,6 +125,25 @@ class Header extends React.Component {
         e.preventDefault();
         if (this.send_modal) this.send_modal.show();
         this._closeDropdown();
+    }
+
+    _verifyKYC(e) {
+        var self = this;
+        e.preventDefault();
+        axios
+            .post("http://192.168.1.7:8070/", {
+                name: self.props.currentAccount
+            })
+            .then(function(response) {
+                self.setState({verifiedKYC: response.data.bool}, () => {
+                    if (self.state.verifiedKYC) {
+                        self.context.router.push("/deposit-withdraw");
+                    }
+                });
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
     }
 
     _showDeposit(e) {
@@ -1306,10 +1327,7 @@ class Header extends React.Component {
                                     onClick={
                                         !enableDepositWithdraw
                                             ? () => {}
-                                            : this._onNavigate.bind(
-                                                  this,
-                                                  "/deposit-withdraw"
-                                              )
+                                            : this._verifyKYC.bind(this)
                                     }
                                 >
                                     <div className="table-cell">

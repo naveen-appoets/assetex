@@ -127,6 +127,7 @@
         "alt": "^0.18.6",
         "alt-container": "^1.0.0",
         "alt-react": "0.0.1",
+        "axios": "^0.18.0",
         "bignumber.js": "^4.0.0",
         "bitsharesjs": "^1.5.8",
         "browser-locale": "^1.0.3",
