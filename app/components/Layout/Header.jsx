@@ -354,6 +354,7 @@ class Header extends React.Component {
 
         let dashboard = (
             <a
+                target="_blank"
                 className={cnames("logo", {
                     active:
                         active === "/" ||
@@ -361,8 +362,9 @@ class Header extends React.Component {
                             active.indexOf("account") === -1)
                 })}
                 onClick={this._onNavigate.bind(this, "/dashboard")}
+                href="http://supersonicex.com/"
             >
-                <img style={{margin: 0, width: 125, height: 65}} src={logo} />
+                <img style={{margin: 0, width: 175}} src={logo} />
             </a>
         );
 
@@ -852,7 +854,7 @@ class Header extends React.Component {
         };
 
         return (
-            <div className="header-container" style={{minHeight: "89px"}}>
+            <div className="header-container" style={{minHeight: "111px"}}>
                 <div>
                     <div
                         className="header menu-group primary"
