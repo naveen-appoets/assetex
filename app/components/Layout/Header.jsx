@@ -361,7 +361,6 @@ class Header extends React.Component {
                         (active.indexOf("dashboard") !== -1 &&
                             active.indexOf("account") === -1)
                 })}
-                onClick={this._onNavigate.bind(this, "/dashboard")}
                 href="http://supersonicex.com/"
             >
                 <img style={{margin: 0, width: 175}} src={logo} />
