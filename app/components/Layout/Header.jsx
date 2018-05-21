@@ -52,7 +52,6 @@ class Header extends React.Component {
             accountsListDropdownActive: false,
             verifiedKYC: false
         };
-        // this._verifyKYC = this._verifyKYC.bind(this);
         this.unlisten = null;
         this._toggleAccountDropdownMenu = this._toggleAccountDropdownMenu.bind(
             this
@@ -127,17 +126,19 @@ class Header extends React.Component {
         this._closeDropdown();
     }
 
-    _verifyKYC(e) {
+    _verifyKYC(name) {
+        alert(name);
         var self = this;
-        e.preventDefault();
+        var url = name;
+        //e.preventDefault();
         axios
-            .post("http://192.168.1.7:8070/", {
+            .post("http://0.0.0.0:8070/", {
                 name: self.props.currentAccount
             })
             .then(function(response) {
                 self.setState({verifiedKYC: response.data.bool}, () => {
                     if (self.state.verifiedKYC) {
-                        self.context.router.push("/deposit-withdraw");
+                        self.context.router.push(url);
                     }
                 });
             })
@@ -1327,7 +1328,10 @@ class Header extends React.Component {
                                     onClick={
                                         !enableDepositWithdraw
                                             ? () => {}
-                                            : this._verifyKYC.bind(this)
+                                            : this._verifyKYC.bind(
+                                                  this,
+                                                  "/deposit-withdraw"
+                                              )
                                     }
                                 >
                                     <div className="table-cell">
@@ -1338,7 +1342,7 @@ class Header extends React.Component {
                                     </div>
                                 </li>
 
-                                <li
+                                {/*    <li
                                     className={cnames(
                                         {
                                             active:
@@ -1361,7 +1365,7 @@ class Header extends React.Component {
                                         <Translate content="modal.deposit.submit_beta" />
                                     </div>
                                 </li>
-
+*/}
                                 <li
                                     className={cnames(
                                         {
@@ -1375,7 +1379,7 @@ class Header extends React.Component {
                                     onClick={
                                         !enableDepositWithdraw
                                             ? () => {}
-                                            : this._onNavigate.bind(
+                                            : this._verifyKYC.bind(
                                                   this,
                                                   "/deposit-withdraw"
                                               )
@@ -1389,7 +1393,7 @@ class Header extends React.Component {
                                     </div>
                                 </li>
 
-                                <li
+                                {/*<li
                                     className={cnames(
                                         "divider",
                                         {
@@ -1412,7 +1416,7 @@ class Header extends React.Component {
                                     <div className="table-cell">
                                         <Translate content="modal.withdraw.submit_beta" />
                                     </div>
-                                </li>
+                                </li>*/}
 
                                 <li
                                     className={cnames(
