@@ -127,13 +127,15 @@ class Header extends React.Component {
     }
 
     _verifyKYC(name) {
-        alert(name);
         var self = this;
         var url = name;
-        //e.preventDefault();
+        if (self.props.currentAccount === undefined) {
+            alert("Kindly log in to your account");
+        }
         axios
-            .post("http://0.0.0.0:8070/", {
-                name: self.props.currentAccount
+            .post("http://authenticate.supersonicex.com/check/yoti", {
+                id: self.props.currentAccount,
+                type: "decentralized"
             })
             .then(function(response) {
                 self.setState({verifiedKYC: response.data.bool}, () => {
